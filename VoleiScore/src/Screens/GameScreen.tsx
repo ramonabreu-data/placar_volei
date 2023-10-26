@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Button } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Orientation from 'react-native-orientation';
 
 const GameScreen = () => {
@@ -34,17 +34,23 @@ const GameScreen = () => {
         onPress={() => incrementScore('red')}
       >
         <Text style={styles.scoreText}>{scoreRed}</Text>
-        <Button title="- 1" onPress={() => decrementScore('red')} />
+        <TouchableOpacity style={styles.button} onPress={() => decrementScore('red')}>
+          <Text style={styles.buttonText}>- 1</Text>
+        </TouchableOpacity>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.teamContainer, styles.blueContainer]}
         onPress={() => incrementScore('blue')}
       >
         <Text style={styles.scoreText}>{scoreBlue}</Text>
-        <Button title=" - 1" onPress={() => decrementScore('blue')} />
+        <TouchableOpacity style={styles.button} onPress={() => decrementScore('blue')}>
+          <Text style={styles.buttonText}>- 1</Text>
+        </TouchableOpacity>
       </TouchableOpacity>
       <View style={styles.resetButtonContainer}>
-        <Button title="Zerar" onPress={resetScores} />
+        <TouchableOpacity style={styles.resetButton} onPress={resetScores}>
+          <Text style={styles.buttonText}>Zerar</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -52,7 +58,7 @@ const GameScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 20,
+    flex: 1,
     flexDirection: 'row',
   },
   teamContainer: {
@@ -67,18 +73,36 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
   },
   scoreText: {
-    fontSize: 48,
+    fontSize: 120,
     color: 'white',
     fontWeight: 'bold',
   },
   resetButtonContainer: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 40,
+    padding: 90,
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
+  },
+  button: {
+    backgroundColor: 'black',
+    padding: 20,
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  resetButton: {
+    backgroundColor: 'black',
+    padding: 20,
+    borderRadius: 10,
+  },
+  buttonText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
