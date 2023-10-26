@@ -1,11 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import GameScreen from './src/Screens/GameScreen';
+import Orientation from 'react-native-orientation';
+
 
 export default function App() {
+
+  useEffect(() => {
+    // Configura a orientação para paisagem quando o componente é montado
+    Orientation.lockToLandscape();
+
+    // Lembre-se de desbloquear a orientação quando o componente for desmontado
+    return () => {
+      Orientation.unlockAllOrientations();
+    };
+  }, []);
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <GameScreen />
     </View>
   );
 }
@@ -13,8 +25,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'row',
   },
 });
+function useEffect(arg0: () => () => void, arg1: never[]) {
+  
+}
+
