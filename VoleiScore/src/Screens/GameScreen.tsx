@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import Orientation from 'react-native-orientation';
+
 
 const GameScreen = () => {
   const [scoreRed, setScoreRed] = useState(0);
@@ -29,6 +29,7 @@ const GameScreen = () => {
 
   return (
     <View style={styles.container}>
+       
       <TouchableOpacity
         style={[styles.teamContainer, styles.redContainer]}
         onPress={() => incrementScore('red')}

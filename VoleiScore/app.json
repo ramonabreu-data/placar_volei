@@ -21,10 +21,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ramonabreu95.VoleiScore"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fcbe089f-01ed-49b3-a3eb-01fe8e6ffc0b"
+      },
+      "googleMapsApiKey": "AIzaSyBt8m9vXe7p6O4g5vVc5HJ5r3gS8uq4qX4"
+    },
+    "config": {
+      "googleMapsApiKey": "AIzaSyBt8m9vXe7p6O4g5vVc5HJ5r3gS8uq4qX4"
+    },  
+    "sdkVersion": "49.0.0"
     }
   }
-}
+
